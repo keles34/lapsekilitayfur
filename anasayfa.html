@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Ana Sayfa</title>
+  <link rel="stylesheet" href="anasayfa.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+
+    <header class="topbar">
+    <button class="notify-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10.29 3.86L1.82 18a1 1 0 0 0 .86 1.5h18.64a1 1 0 0 0 .86-1.5L13.71 3.86a1 1 0 0 0-1.72 0z"></path>
+        <line x1="12" y1="9" x2="12" y2="13"></line>
+        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+    </button>
+
+    <div class="brand">EFEYEGÖTTEN</div>
+    <button id="userBtn" class="user-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+    </button>
+    </header>
+
+  <main class="page-content">
+    <div id="loadingOverlay" class="loading-overlay" style="display:none;">
+    <div class="loading-box">
+        <div class="icon-container">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="9" y1="9" x2="15" y2="15"></line>
+            <line x1="15" y1="9" x2="9" y2="15"></line>
+        </svg>
+        </div>
+        <div class="loading-text">
+        Scanning locations...
+        <span class="spinner"></span>
+        </div>
+    </div>
+    </div>
+    <div id="map"></div>
+    <div id="konumContainer" class="konum-container">
+      <div id="konumKutu" class="konum-kutu" style="display:none;"></div>
+      <button id="konumHakkindaBtn" style="display:none;">About Location</button>
+      <button id="konumBulBtn">Search Location</button>
+      <button id="iptalBtn" style="display:none;">Cancel</button>
+    </div>
+  </main>
+
+  <aside id="sidePanel" class="side-panel">
+    <div class="panel-inner">
+    <div class="panel-top">
+      <div id="username" class="username">Kullanıcı Adı</div>
+      <button id="logoutBtn" class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+    </div>
+      <div id="adminButtons" style="display:none;">
+        <button id="konumEkleBtn">Konum Ekle</button>
+      </div>
+      <div class="panel-bottom">
+      </div>
+    </div>
+  </aside>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="anasayfa.js"></script>
+</body>
+</html>
